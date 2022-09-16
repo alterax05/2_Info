@@ -13,6 +13,7 @@
 
         public void InserimentoOrdinato(int n)
         {
+            //Ciao zos
             array[dim] = n;
             int i = dim;
             bool fine = false;
