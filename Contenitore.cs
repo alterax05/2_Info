@@ -28,6 +28,29 @@ namespace _2_Info
 
         public void InserimentoOrdinato(int n)
         {
+            array[dim] = n;
+            int i = dim;
+            bool fine = false;
+
+            while (i > 0 && ! fine)
+            {
+                if(array[i] < array[i - 1])
+                {
+                    int temp = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = temp;
+
+                }
+                else
+                {
+                    fine = true:
+                }
+            }
+            dim++;
+        } 
+
+ /*        public void InserimentoOrdinato(int n)
+        {
             array[dim] = n;  //metto il nuovo valore alla fine
             int i = dim;
             bool finito = false;
@@ -46,7 +69,8 @@ namespace _2_Info
                 }
             }
             dim++;
-        }
+        } */
+
         public void Print()
         {
             foreach (int i in array)

@@ -7,15 +7,15 @@
             Console.Write("Inserisci dim: ");
             int dim = Convert.ToInt32(Console.ReadLine());
 
-            Contenitore v = new Contenitore();
-            //v.Inserisci();
+            Contenitore c = new Contenitore();
+
             for (int i = 0; i < dim; i++)
             {
                 Console.Write("Inserisci numero: ");
                 int num = Convert.ToInt32(Console.ReadLine());
-                v.InserimentoOrdinato(num);
+                c.InserimentoOrdinato(num);
             }
-            v.Print();
+            c.Print();
         }
     }
 }
