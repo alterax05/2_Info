@@ -15,6 +15,7 @@
                 int num = Convert.ToInt32(Console.ReadLine());
                 c.InserimentoOrdinato(num);
             }
+
             c.Print();
         }
     }
