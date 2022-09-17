@@ -4,13 +4,11 @@
     {
         private int[] array;
         private int dim;
-
         public Contenitore()
         {
             array = new int[100];
             dim = 0;
         }
-
         public void InserimentoOrdinato(int n)
         {
             //Ciao zos
@@ -36,7 +34,6 @@
             }
             dim++;
         }
-
         public void Print()
         {
             foreach (int i in array)
@@ -50,6 +47,17 @@
                     break;
                 }
             }
+        }
+        public int InserimentoOrdinato2(int n)
+        {
+            int i;
+            for (i = dim - 1; i >= 0 && array[i] > n; i--)
+            {
+                array[i + 1] = array[i];
+            }
+            array[i + 1] = n;
+            dim++;
+            return dim;
         }
     }
 }

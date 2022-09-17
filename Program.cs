@@ -4,19 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Inserisci dim: ");
-            int dim = Convert.ToInt32(Console.ReadLine());
-
             Contenitore c = new Contenitore();
-
-            for (int i = 0; i < dim; i++)
+            while (true)
             {
                 Console.Write("Inserisci numero: ");
-                int num = Convert.ToInt32(Console.ReadLine());
-                c.InserimentoOrdinato(num);
+                c.InserimentoOrdinato2(Convert.ToInt32(Console.ReadLine()));
+                c.Print();
             }
-
-            c.Print();
         }
     }
 }
