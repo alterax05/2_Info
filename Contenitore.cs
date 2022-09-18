@@ -3,61 +3,72 @@
     internal class Contenitore
     {
         private int[] array;
-        private int dim;
+        private int num;
         public Contenitore()
         {
-            array = new int[100];
-            dim = 0;
-        }
-        public void InserimentoOrdinato(int n)
-        {
-            //Ciao zos
-            array[dim] = n;
-            int i = dim;
-            bool fine = false;
-
-            while (i > 0 && !fine)
-            {
-                if (array[i] < array[i - 1])
-                {
-                    //Scambio di numeri
-                    int temp = array[i];
-                    array[i] = array[i - 1];
-                    array[i - 1] = temp;
-
-                    i--;
-                }
-                else
-                {
-                    fine = true;
-                }
-            }
-            dim++;
+            array = new int[1000];
+            num = 0;
         }
         public void Print()
         {
-            foreach (int i in array)
+            for (int i = 0; i < num; i++)
             {
-                if (i != 0)
-                {
-                    Console.WriteLine(i);
-                }
-                else
-                {
-                    break;
-                }
+                Console.Write(array[i] + " ");
             }
         }
-        public int InserimentoOrdinato2(int n)
+        public int InserimentoOrdinato(int n)
         {
             int i;
-            for (i = dim - 1; i >= 0 && array[i] > n; i--)
+            for (i = num - 1; i >= 0 && array[i] > n; i--)
             {
                 array[i + 1] = array[i];
             }
             array[i + 1] = n;
-            dim++;
-            return dim;
+            num++;
+            return num;
+        }
+        public void BubbleSort()
+        {
+            for (int i = 0; i < num - 1; i++)
+            {
+                for (int j = 0; j < num - i - 1; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        public void Input(int n)
+        {
+            array[num] = n;
+            num++;
+        }
+        public int Elemento_Piu_Frequente()
+        {
+            int n = array[0];
+            int volte_max = 0;
+
+            for (int i = 0; i < num - 1; i++)
+            {
+                int volte = 0;
+                for (int j = 0; j < num - i - 1; j++)
+                {
+                    if (array[i] == array[j])
+                    {
+                        volte++;
+                    }
+                }
+                if (volte_max < volte)
+                {
+                    volte_max = volte;
+                    n = array[i];
+                }
+            }
+            return n;
         }
     }
 }
