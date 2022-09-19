@@ -52,10 +52,10 @@
             int n = array[0];
             int volte_max = 0;
 
-            for (int i = 0; i < num - 1; i++)
+            for (int i = 0; i < num; i++)
             {
                 int volte = 0;
-                for (int j = 0; j < num - i - 1; j++)
+                for (int j = i; j < num; j++)
                 {
                     if (array[i] == array[j])
                     {
@@ -68,7 +68,7 @@
                     n = array[i];
                 }
             }
-            return n;
+            return n
         }
     }
 }
