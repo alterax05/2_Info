@@ -68,7 +68,7 @@
                     n = array[i];
                 }
             }
-            return n
+            return n;
         }
     }
 }
